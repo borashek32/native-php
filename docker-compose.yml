@@ -1,10 +1,10 @@
 version: '3.8'
 networks:
-  app-network:
+  native-app-network:
 
 services:
   nginx:
-    container_name: nginx
+    container_name: native-nginx
     image: nginx
     volumes:
       - ./_docker/nginx/conf.d/:/etc/nginx/conf.d/
@@ -14,10 +14,10 @@ services:
     depends_on:
       - app
     networks:
-      - app-network
+      - native-app-network
 
   app:
-    container_name: app
+    container_name: native-app
     build:
       context: .
       dockerfile: _docker/app/Dockerfile
@@ -27,21 +27,21 @@ services:
     depends_on:
       - db
     networks:
-      - app-network
+      - native-app-network
 
   adminer:
     image: adminer
-    container_name: adminer
+    container_name: native-adminer
     restart: always
     environment:
       ADMINER_DEFAULT_SERVER: database
     ports:
       - "8087:8080"
     networks:
-      - app-network
+      - native-app-network
 
   db: 
-    container_name: database
+    container_name: native-database
     image: mysql:9.0
     restart: always
     volumes:
@@ -53,4 +53,4 @@ services:
       - '8101:3306'
     command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
     networks:
-      - app-network
+      - native-app-network
