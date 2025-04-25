@@ -42,10 +42,10 @@ services:
 
   db: 
     container_name: native-database
-    image: mysql:9.0
+    image: mysql:8.0
     restart: always
     volumes:
-      - ./tmp/db/:/var/lib/mysql
+      - mysql_data:/var/lib/mysql
     environment:
       MYSQL_DATABASE: native_php
       MYSQL_ROOT_PASSWORD: root
@@ -54,3 +54,6 @@ services:
     command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
     networks:
       - native-app-network
+
+volumes:
+  mysql_data:
