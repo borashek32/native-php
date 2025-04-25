@@ -2,22 +2,22 @@
     <h2><?= $title ?> Profile</h2>
 
     <div class="info">
-        <strong>Name:</strong> <?= htmlspecialchars($employee['name']) ?>
+        <strong>Name:</strong> <?= htmlspecialchars($name) ?>
     </div>
 
     <div class="info">
-        <strong>Position:</strong> <?= htmlspecialchars($employee['position']) ?>
+        <strong>Position:</strong> <?= htmlspecialchars($position) ?>
     </div>
 
     <div class="info">
-        <strong>Email:</strong> <?= htmlspecialchars($employee['email']) ?>
+        <strong>Email:</strong> <?= htmlspecialchars($email) ?>
     </div>
 
     <div class="info">
-        <strong>Status:</strong> <?= htmlspecialchars($employee['work_output']) ?>
+        <strong>Status:</strong> <?= htmlspecialchars($work_output) ?>
     </div>
 
     <div class="info">
-        <strong>Break time:</strong> <?= htmlspecialchars($employee['rest_output']) ?>
+        <strong>Break time:</strong> <?= htmlspecialchars($rest_output) ?>
     </div>
 </div>

@@ -16,7 +16,7 @@
 </head>
 <body>
 <div class="profile-card">
-    <?php include '../profile-info.php'?>
+    <?= $content ?>
 </div>
 </body>
 </html>

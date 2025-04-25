@@ -2,28 +2,17 @@
 
 namespace App\Controllers;
 
+use App\Core\RenderTrait;
 use App\Models\Designer;
 
 class DesignerController
 {
+    use RenderTrait;
     public function createDesigner(): string
     {
         $designer = new Designer('Polina', 'polina@email.com', 'junior designer');
+        $title = 'Designer';
 
-        return $this->renderView($designer);
-    }
-
-    private function renderView($designer): string
-    {
-        extract([
-            'name' => $designer->name,
-            'email' => $designer->email,
-            'position' => $designer->position,
-            'work_output' => $designer->work(),
-            'rest_output' => $designer->rest()
-        ]);
-        ob_start();
-        include __DIR__ . '/../../views/profile-info.php';
-        return ob_get_clean();
+        return $this->renderView($title, $designer);
     }
 }
