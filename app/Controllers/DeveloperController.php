@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Core\RenderTrait;
+use App\Traits\RenderTrait;
 use App\Models\Developer;
 
 class DeveloperController

@@ -5,7 +5,7 @@ networks:
 services:
   nginx:
     container_name: native-nginx
-    image: nginx
+    image: nginx:latest
     volumes:
       - ./_docker/nginx/conf.d/:/etc/nginx/conf.d/
       - ./:/var/www/
@@ -34,9 +34,11 @@ services:
     container_name: native-adminer
     restart: always
     environment:
-      ADMINER_DEFAULT_SERVER: database
+      ADMINER_DEFAULT_SERVER: db
     ports:
       - "8087:8080"
+    depends_on:
+      - db
     networks:
       - native-app-network
 

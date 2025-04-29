@@ -1,7 +1,19 @@
 {
+  "name": "native-php-learning-app/v1.0",
+  "description": "To test features, frameworks etc.",
+  "minimum-stability": "stable",
+  "authors": [
+    {
+      "name": "Nataly",
+      "email": "borashek88@gmail.ru"
+    }
+  ],
   "autoload": {
     "psr-4": {
       "App\\": "app/"
     }
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.12"
   }
 }
