@@ -17,8 +17,7 @@ abstract class Worker
         string $name,
         string $email,
         string $position
-    )
-    {
+    ) {
         $this->name = $name;
         $this->email = $email;
         $this->position = $position;
